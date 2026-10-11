@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, sans-serif;
+  background-color: #0a1929;
+  color: #e2e8f0;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0a1929;
+}
+::-webkit-scrollbar-thumb {
+  background: #243b53;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334e68;
+}
+
+.tab-scroll::-webkit-scrollbar {
+  height: 4px;
+}
+.tab-scroll::-webkit-scrollbar-thumb {
+  background: #334e68;
+  border-radius: 2px;
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-navy-900/60 backdrop-blur-md border border-navy-700/50 rounded-xl;
+  }
+  .status-badge {
+    @apply inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium;
+  }
+  .tab-button {
+    @apply flex items-center gap-2 px-4 py-2.5 rounded-t-lg text-sm font-medium whitespace-nowrap transition-all duration-300 cursor-pointer border-b-2;
+  }
+  .input-field {
+    @apply w-full bg-navy-800/50 border border-navy-600/50 rounded-lg px-3 py-2 text-sm text-white placeholder:text-navy-400 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all duration-200;
+  }
+  .btn-primary {
+    @apply bg-primary-600 hover:bg-primary-700 text-white font-medium px-4 py-2 rounded-lg transition-all duration-200 active:scale-95;
+  }
+  .btn-secondary {
+    @apply bg-navy-700 hover:bg-navy-600 text-white font-medium px-4 py-2 rounded-lg transition-all duration-200 active:scale-95;
+  }
+  .btn-danger {
+    @apply bg-danger-600 hover:bg-danger-700 text-white font-medium px-4 py-2 rounded-lg transition-all duration-200 active:scale-95;
+  }
+}
